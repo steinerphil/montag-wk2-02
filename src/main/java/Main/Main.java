@@ -18,7 +18,9 @@ public class Main {
 
         //Method Tests
         System.out.println(allStudents.list());
-        System.out.println(allStudents.randomStudent());
+
+        allStudents.remove(4);
+        System.out.println(allStudents.list());
 
     }
 

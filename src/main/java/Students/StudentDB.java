@@ -1,12 +1,12 @@
 package Students;
 
-import java.security.PublicKey;
 import java.util.Arrays;
 import java.lang.Math;
 
 public class StudentDB {
 
-    private final Student[] students;
+    private Student[] students;
+
 
     public StudentDB(Student[] students) {
         this.students = students;
@@ -30,7 +30,19 @@ public class StudentDB {
         return students[(int) Math.floor(Math.random() * students.length)];
     }
 
-    public boolean remove(Student studentToRemove){
-
+    public boolean remove(int studentIdToRemove){
+        boolean check = false;
+        for(int i = 0; i < students.length; i++){
+            if(students[i].getId()== studentIdToRemove){
+                System.out.println("Student " + students[i].getName() + " removed.");
+                students[i] = null;
+                check = true;
+            }
+        }
+        if (!check){
+            System.out.println("Student with ID " + studentIdToRemove + " not found.");
+        }
+        return check;
     }
+
 }
