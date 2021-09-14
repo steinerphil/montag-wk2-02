@@ -18,7 +18,6 @@ public class Main {
 
         //Method Tests
         System.out.println(allStudents.list());
-
         allStudents.remove(4);
         System.out.println(allStudents.list());
 

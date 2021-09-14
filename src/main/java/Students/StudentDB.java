@@ -16,12 +16,6 @@ public class StudentDB {
         return students;
     }
 
-    @Override
-    public String toString() {
-        return "all known students= " + Arrays.toString(students) +
-                '}';
-    }
-
     public String list() {
         return Arrays.toString(students);
     }
