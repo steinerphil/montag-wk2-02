@@ -1,33 +1,34 @@
-//package Students;
-//import org.junit.jupiter.api.Test;
-//import java.util.Arrays;
-//import static org.junit.jupiter.api.Assertions.*;
-//
-//class StudentDBTest {
-//
-//    Student[] testStudents = {
-//            new Student("Hans", 01),
-//            new Student("Peter", 02),
-//    };
-//    StudentDB testDB = new StudentDB(testStudents);
-//
-//    @Test
-//    void list() {
-//        //given
-//        String expected = "[[name='Hans'; id=1], [name='Peter'; id=2]]";
-//        //when
-//        String actual = testDB.list();
-//        //then
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void remove() {
-//        //given
-//             //testDB
-//        //when
-//        boolean actual = testDB.remove(1); //should remove "Hans" from the list
-//        //then
-//        assertTrue(actual);
-//    }
-//}
+package Students;
+import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.*;
+
+
+
+
+class StudentDBTest {
+
+
+
+
+
+    @Test
+
+    void list() {
+        //given
+        List<Student> expected = new ArrayList<>();
+
+        expected.add(new MathStudent("Peter", 2));
+        expected.add(new MathStudent("Maria", 5));
+        expected.add(new MathStudent("Hans", 9));
+
+        StudentDB testDB = new StudentDB(expected);
+
+        //when
+        List actual = testDB.getStudents();
+        //then
+        assertEquals(expected, actual);
+    }
+
+}

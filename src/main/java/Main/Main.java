@@ -5,22 +5,27 @@ import Students.MathStudent;
 import Students.Student;
 import Students.StudentDB;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
+
     public static void main(String[] args) {
-        //Create Students from interface
-        Student[] students = new Student[3];
-        students[0] = new MathStudent("Peter", 2);
-        students[1] = new HistoryStudent("Anja", 3);
-        students[2] = new MathStudent("Nele", 20);
+        //Vars
+        List<Student> students = new ArrayList<>();
+
+        //Create Students and add to ArrayList of Students
+        students.add(new MathStudent("Peter", 2));
+        students.add(new HistoryStudent("Maria", 5));
+        students.add(new MathStudent("Hans", 9));
 
         //Create a StudentDB
         StudentDB allStudents = new StudentDB(students);
 
-        // test interface methods
-        System.out.println(students[0].getNc());
+        //Use StudentDB method
         System.out.println(allStudents.list());
-        System.out.println(students[0].getUniName());
+
     }
 
 }
