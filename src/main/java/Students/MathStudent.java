@@ -1,12 +1,19 @@
 package Students;
 
-public class MathStudent implements Student{
+public class MathStudent extends Student{
     private String name;
     private int id;
 
     public MathStudent(String name, int id) {
         this.name = name;
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "[ " + name +
+                "; id=" + id +
+                " ]";
     }
 
     @Override

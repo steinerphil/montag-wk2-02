@@ -1,8 +1,15 @@
 package Students;
 
-public interface Student {
+public abstract class Student {
 
-    String getName();
-    int getId();
-    double getNc();
+   private String uniName = "MIT";
+
+    public String getUniName() {
+        return uniName;
+    }
+
+    public abstract String toString();
+   public abstract String getName();
+   public abstract int getId();
+    public abstract double getNc();
 }

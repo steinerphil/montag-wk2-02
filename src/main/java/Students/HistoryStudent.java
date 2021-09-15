@@ -1,6 +1,6 @@
 package Students;
 
-public class HistoryStudent implements Student{
+public class HistoryStudent extends Student{
     private String name;
     private final int id;
 
@@ -11,9 +11,9 @@ public class HistoryStudent implements Student{
 
     @Override
     public String toString() {
-        return "[name='" + name + '\'' +
+        return "[ " + name +
                 "; id=" + id +
-                "]";
+                " ]";
     }
 
     @Override
