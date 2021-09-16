@@ -27,7 +27,7 @@ public class StudentDB {
 
     public void add(Students newStudent) {
         if (students.containsKey(newStudent.getId())) {
-            throw new RuntimeException("Student already exists.");
+            throw new RuntimeException("Student " + newStudent.getName() + " already exists.");
         }
         students.put(newStudent.getId(), newStudent);
     }

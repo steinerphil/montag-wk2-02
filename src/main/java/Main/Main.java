@@ -33,7 +33,7 @@ public class Main {
             allStudents.add(new MathStudent("Peter", 2)); // throws exception
         }
         catch (RuntimeException e){
-            System.err.println("error, already exisits ");  // program do not crash because catch
+            System.err.println("error, the student you are trying to add already exists");  // program do not crash because catch
         };
 
         System.out.println(allStudents.list());
