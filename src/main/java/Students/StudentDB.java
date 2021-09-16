@@ -9,23 +9,17 @@ public class StudentDB {
 
     private final Map<Integer, Students> students = new HashMap<>();
 
-    public StudentDB() {
-    }
-
+    //Constructors
     public StudentDB(List <Students> student) {
         add(student);
     }
 
-
-
-
+    //getter
     public Map<Integer, Students> getStudents() {
         return students;
     }
 
-
-
-
+    //toString
     @Override
     public String toString() {
         return students.toString();
@@ -33,12 +27,10 @@ public class StudentDB {
 
 
 
-
+    // methods
     public List<Students> list() {
         return new ArrayList<>(students.values());
     }
-
-
 
 
     public void add(Students newStudent) {
@@ -50,10 +42,16 @@ public class StudentDB {
 
     public void add(List<Students> students) {
         for (Students student : students) {
-            add(student); //calls add() method above
+            add(student); //calls add(Students) method above
         }
     }
 
+    public void remove(int studentKey) throws StudentNotRemovedException {
+        if (!students.containsKey(studentKey)) {
+            throw new StudentNotRemovedException("Can not find key: " + studentKey);
+        }
+        students.remove(studentKey);
+    }
 
     public Students randomStudent() {
         Random r = new Random();
@@ -62,11 +60,9 @@ public class StudentDB {
         return randomStudents;
     }
 
-    public void remove(int studentKey) throws StudentNotRemovedException {
-        if (!students.containsKey(studentKey)) {
-            throw new StudentNotRemovedException("Can not find key: " + studentKey);
-        }
-        students.remove(studentKey);
+    public Optional<Students> getById(int id){
+        Students studentTOSearchFor = students.get(id);
+        return Optional.ofNullable(studentTOSearchFor);
     }
 
 

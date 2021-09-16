@@ -35,7 +35,7 @@ class StudentDBTest {
     @DisplayName("throws exeption when students already exists")
     void add() {
         //given
-        StudentDB testDB = new StudentDB();
+        StudentDB testDB = new StudentDB(new ArrayList<>());
         testDB.add(new MathStudent("Peter", 1));
         testDB.add(new MathStudent("Peter", 2));
         testDB.add(new MathStudent("Maria", 3));
