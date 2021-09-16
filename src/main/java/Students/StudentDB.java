@@ -1,12 +1,11 @@
 package Students;
 
-import java.util.Arrays;
+import java.util.*;
 import java.lang.Math;
-import java.util.Map;
 
 public class StudentDB {
 
-    private Map students;
+    private final Map<Integer, Students> students;
 
 
     public StudentDB(Map<Integer, Students> students) {
@@ -22,27 +21,19 @@ public class StudentDB {
         return students.toString();
     }
 
-    public String list() {
-        return students.toString();
+    public List<Students> list() {
+        return new ArrayList<>(students.values());
     }
 
-    public Object randomStudent() {
-        return students.get(((int) Math.floor(Math.random() * students.size())));
-    }
-
-//    public boolean remove(int studentIdToRemove){
-//        boolean check = false;
-//        for(int i = 0; i < students.length; i++){
-//            if(students[i].getId()== studentIdToRemove){
-//                System.out.println("Student " + students[i].getName() + " removed.");
-//                students[i] = null;
-//                check = true;
-//            }
-//        }
-//        if (!check){
-//            System.out.println("Student with ID " + studentIdToRemove + " not found.");
-//        }
-//        return check;
+//    public HashMap<Integer, Students> randomStudent() {
+//
+//        students.
+//        return students.get(((int)(Math.random() * students.size())));
 //    }
+
+    public void remove(int studentKey){
+        students.remove(studentKey);
+    }
+
 
 }

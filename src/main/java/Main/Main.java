@@ -25,8 +25,10 @@ public class Main {
         //Create a StudentDB
         StudentDB allStudents = new StudentDB(students);
 
+        System.out.println(allStudents.);
+
         //Use StudentDB method
-        System.out.println(allStudents.list());
+
 
     }
 

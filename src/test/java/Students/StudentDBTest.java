@@ -21,10 +21,10 @@ class StudentDBTest {
     void list() {
         //given
         Map<Integer, Students> expected = new HashMap<Integer, Students>();
-
         expected.put(1, new MathStudent("Peter", 2));
         expected.put(2, new MathStudent("Maria", 5));
         expected.put(3, new MathStudent("Hans", 9));
+
 
         StudentDB testDB = new StudentDB(expected);
 
