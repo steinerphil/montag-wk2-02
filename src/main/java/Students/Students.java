@@ -3,7 +3,6 @@ package Students;
 public abstract class Students {
 
    private String uniName = "MIT";
-
     public String getUniName() {
         return uniName;
     }

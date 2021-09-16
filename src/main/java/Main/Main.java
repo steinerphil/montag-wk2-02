@@ -1,42 +1,44 @@
 package Main;
 
+import Exceptions.StudentNotRemovedException;
 import Students.HistoryStudent;
 import Students.MathStudent;
 import Students.StudentDB;
-import Students.Students;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        //Vars
-        Map<Integer, Students> students = new HashMap<>();
+        //Create Student DB
+        StudentDB students = new StudentDB();
+        //Create Students and add to List of Students
+        students.add(new MathStudent("Peter", 1));
+        students.add(new HistoryStudent("Maria", 2));
+        students.add(new MathStudent("Hans", 3));
 
-        //Create Students and add to Hashmap of Students
-        students.put(1, new MathStudent("Peter", 1));
-        students.put(2, new HistoryStudent("Maria", 2));
-        students.put(3, new MathStudent("Hans", 3));
-
-        //Create a StudentDB
-        StudentDB allStudents = new StudentDB(students);
-        System.out.println(allStudents.list());
+        System.out.println(students.list());
 
 
         //Use StudentDB method
 
         try {
-            allStudents.add(new MathStudent("Peter", 2)); // throws exception
+            students.add(new MathStudent("Peter", 4)); // throws exception
         }
         catch (RuntimeException e){
-            System.err.println("error, the student you are trying to add already exists");  // program do not crash because catch
+            e.printStackTrace();// program do not crash because catch
         };
 
-        System.out.println(allStudents.list());
+
+        try {
+            students.remove(1);
+        } catch (StudentNotRemovedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(students.list());
+
+        System.out.println(students.randomStudent().toString());
+
 
 
     }

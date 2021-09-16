@@ -1,5 +1,7 @@
 package Students;
 
+import java.util.Objects;
+
 public class MathStudent extends Students {
     private String name;
     private int id;
@@ -29,5 +31,18 @@ public class MathStudent extends Students {
     @Override
     public double getNc() {
         return 1.1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MathStudent that = (MathStudent) o;
+        return id == that.id && Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id);
     }
 }
