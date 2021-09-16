@@ -17,7 +17,7 @@ class StudentDBTest {
 
     void list() {
         //given
-        List<Student> expected = new ArrayList<>();
+        List<Map> expected = new ArrayList<>();
 
         expected.add(new MathStudent("Peter", 2));
         expected.add(new MathStudent("Maria", 5));

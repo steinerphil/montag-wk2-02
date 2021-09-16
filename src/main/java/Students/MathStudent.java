@@ -1,6 +1,6 @@
 package Students;
 
-public class MathStudent extends Student{
+public class MathStudent extends Students {
     private String name;
     private int id;
 

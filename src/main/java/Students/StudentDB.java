@@ -1,28 +1,33 @@
 package Students;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.lang.Math;
-import java.util.List;
+import java.util.Map;
 
 public class StudentDB {
 
-    private List students;
+    private Map students;
 
 
-    public StudentDB(List students) {
+    public StudentDB(Map students) {
         this.students = students;
     }
 
-    public List getStudents() {
+    public Map getStudents() {
         return students;
     }
 
-    public String list(){
+    @Override
+    public String toString() {
         return students.toString();
     }
 
-    public Object randomStudent() {
-        return students.get((int) Math.floor(Math.random() * students.size()));
+    public String list() {
+        return students.toString();
+    }
+
+    public Map randomStudent() {
+        return students;
     }
 
 //    public boolean remove(int studentIdToRemove){

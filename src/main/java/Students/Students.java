@@ -1,6 +1,6 @@
 package Students;
 
-public abstract class Student {
+public abstract class Students {
 
    private String uniName = "MIT";
 
