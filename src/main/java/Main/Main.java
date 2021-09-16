@@ -17,7 +17,7 @@ public class Main {
         //Vars
         Map<Integer, Students> students = new HashMap<>();
 
-        //Create Students and add to ArrayList of Students
+        //Create Students and add to Hashmap of Students
         students.put(1, new MathStudent("Peter", 1));
         students.put(2, new HistoryStudent("Maria", 2));
         students.put(3, new MathStudent("Hans", 3));
