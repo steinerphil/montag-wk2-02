@@ -1,7 +1,10 @@
 package Students;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -17,16 +20,16 @@ class StudentDBTest {
 
     void list() {
         //given
-        List<Map> expected = new ArrayList<>();
+        Map<Integer, Students> expected = new HashMap<Integer, Students>();
 
-        expected.add(new MathStudent("Peter", 2));
-        expected.add(new MathStudent("Maria", 5));
-        expected.add(new MathStudent("Hans", 9));
+        expected.put(1, new MathStudent("Peter", 2));
+        expected.put(2, new MathStudent("Maria", 5));
+        expected.put(3, new MathStudent("Hans", 9));
 
         StudentDB testDB = new StudentDB(expected);
 
         //when
-        List actual = testDB.getStudents();
+        Map<Integer, Students> actual = testDB.getStudents();
         //then
         assertEquals(expected, actual);
     }

@@ -9,11 +9,11 @@ public class StudentDB {
     private Map students;
 
 
-    public StudentDB(Map students) {
+    public StudentDB(Map<Integer, Students> students) {
         this.students = students;
     }
 
-    public Map getStudents() {
+    public Map<Integer, Students> getStudents() {
         return students;
     }
 
@@ -26,8 +26,8 @@ public class StudentDB {
         return students.toString();
     }
 
-    public Map randomStudent() {
-        return students;
+    public Object randomStudent() {
+        return students.get(((int) Math.floor(Math.random() * students.size())));
     }
 
 //    public boolean remove(int studentIdToRemove){

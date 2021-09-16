@@ -21,7 +21,6 @@ public class Main {
         students.put(1, new MathStudent("Peter", 2));
         students.put(2, new HistoryStudent("Maria", 5));
         students.put(3, new MathStudent("Hans", 9));
-        students.
 
         //Create a StudentDB
         StudentDB allStudents = new StudentDB(students);
