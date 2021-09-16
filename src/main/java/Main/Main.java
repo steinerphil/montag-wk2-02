@@ -18,16 +18,25 @@ public class Main {
         Map<Integer, Students> students = new HashMap<>();
 
         //Create Students and add to ArrayList of Students
-        students.put(1, new MathStudent("Peter", 2));
-        students.put(2, new HistoryStudent("Maria", 5));
-        students.put(3, new MathStudent("Hans", 9));
+        students.put(1, new MathStudent("Peter", 1));
+        students.put(2, new HistoryStudent("Maria", 2));
+        students.put(3, new MathStudent("Hans", 3));
 
         //Create a StudentDB
         StudentDB allStudents = new StudentDB(students);
+        System.out.println(allStudents.list());
 
-        System.out.println(allStudents.);
 
         //Use StudentDB method
+
+        try {
+            allStudents.add(new MathStudent("Peter", 2)); // throws exception
+        }
+        catch (RuntimeException e){
+            System.err.println("error, already exisits ");  // program do not crash because catch
+        };
+
+        System.out.println(allStudents.list());
 
 
     }

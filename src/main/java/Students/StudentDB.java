@@ -25,6 +25,13 @@ public class StudentDB {
         return new ArrayList<>(students.values());
     }
 
+    public void add(Students newStudent) {
+        if (students.containsKey(newStudent.getId())) {
+            throw new RuntimeException("Student already exists.");
+        }
+        students.put(newStudent.getId(), newStudent);
+    }
+
 //    public HashMap<Integer, Students> randomStudent() {
 //
 //        students.
